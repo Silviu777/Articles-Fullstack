@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const articleSchema = new mongoose.Schema({
-    Article_name: {
-        type: String,
-        required: true
-    },
     Article_no: {
         type: Number,
         required: true
