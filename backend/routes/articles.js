@@ -27,9 +27,8 @@ router.get('/', async (req, res) => {
 
 
 //GET one  -- name
-router.get('/:name', idFunctions.getArticleNAME, async (req, res) => {
+router.get('/:id', idFunctions.getArticleID, async (req, res) => {
     try{
-       //const mytoken = await Token.find({_id: res.article.Article_tokens[0]});
         res.status(200).json(res.article);
     }
     catch(err){
@@ -42,13 +41,17 @@ router.get('/:name', idFunctions.getArticleNAME, async (req, res) => {
 //POST
 router.post('/', async (req, res) => {
     const article = new articleSchema({ 
-        //este interesant ca daca testez cu REST client, imi gaseste body-ul gol
-        //insa in postman, totul este ok
-        Article_name: req.body.Article_name,
         Article_no: req.body.Article_no,
         Article_short_description: req.body.Article_short_description,
         Article_tokensIDs: req.body.Article_tokensIDs,
-        Article_categoryID: req.body.Article_categoryID
+        Article_categoryID: req.body.Article_categoryID,
+        Article_source: req.body.Article_source,
+        Article_URL: req.body.Article_URL,
+        Location: req.body.Location,
+        Article_keywords: req.body.Article_keywords, 
+        Article_weight: req.body.Article_weight,
+        Article_citations: req.body.Article_citations
+
     });
 
     try{

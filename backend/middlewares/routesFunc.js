@@ -39,22 +39,7 @@ async function getTokensID(req, res, next){
             next();  //move on
         }
         
-        async function getArticleNAME(req, res, next){
-            let article;
-            try{
-                article = await articlesSchema.findOne({"Article_name": req.params.name});
-                //findOne -- return the first doc that contain the object form params
-                if(article == null){
-                    return res.status(404).json({message: 'Article not found'})
-                }
-            }
-            catch(err){
-            return res.status(500).json({message: err.message})
-            }
-            
-                res.article = article;
-                next();  //move on
-            }
+  
 
             async function getCategoriesID(req, res, next){
                 let category;
@@ -75,7 +60,6 @@ async function getTokensID(req, res, next){
 
 module.exports = {
     getTokensID,
-    getArticleNAME,
     getArticleID,
     getCategoriesID
 }
