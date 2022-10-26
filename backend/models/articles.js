@@ -1,12 +1,8 @@
 const mongoose = require('mongoose');
 
 const articleSchema = new mongoose.Schema({
-    Article_name: {
-        type: String,
-        required: true
-    },
     Article_no: {
-        type: Number,
+        type: String,
         required: true
     },
     Article_categoryID: {
@@ -46,7 +42,7 @@ const articleSchema = new mongoose.Schema({
         type: String
     },
     Article_weight: {
-        type:Number
+        type: String
     },
     Article_citations: {
         type: String
