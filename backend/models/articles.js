@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const articleSchema = new mongoose.Schema({
     Article_no: {
-        type: String,
+        type: Number,
         required: true
     },
     Article_categoryID: {
