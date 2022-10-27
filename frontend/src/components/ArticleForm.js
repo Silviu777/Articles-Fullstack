@@ -1,43 +1,125 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function ArticleForm() {
+
+    const [postId, setPostId] = useState(null);
+
+    const [number, setNumber] = useState("");
+    const [categoryId, setCategoryId] = useState("");
+    const [description, setDescription] = useState("");
+    const [source, setSource] = useState("");
+    const [url, setUrl] = useState("");
+    const [location, setLocation] = useState("");
+    const [keywords, setKeywords] = useState("");
+    const [weight, setWeight] = useState("");
+
+
+    let handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+        let res = await fetch("http://localhost:5000/articles", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                Article_no: number,
+                Article_categoryID: categoryId,
+                Article_short_description: description,
+                Article_source: source,
+                Article_URL: url,
+                Location: location,
+                Article_keywords: keywords,
+                Article_weight: weight
+            }),
+        });
+        window.open("http://localhost:3000/api/articles", "_self");
+        } 
+        catch (err) {
+            console.log("ceva nu e bine");
+        }
+    };
+
     return (
-        <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Category ID</Form.Label>
-            <Form.Control type="text" placeholder="Enter email" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Tokens ID</Form.Label>
-            <Form.Control type="text" placeholder="Enter email" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Short Description</Form.Label>
-            <Form.Control type="text" placeholder="Enter email" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Body</Form.Label>
-            <Form.Control type="text" placeholder="Enter email" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Source</Form.Label>
-            <Form.Control type="text" placeholder="Enter email" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Keywords</Form.Label>
-            <Form.Control type="text" placeholder="Enter email" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Citations</Form.Label>
-            <Form.Control type="text" placeholder="Enter email" />
-          </Form.Group>
-          
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
+        <div className="App">
+            <form onSubmit={handleSubmit}>
+                <h2>Add / Edit Article </h2>
+                <div className='form-group'>
+                    <input
+                        className='form-control'
+                        type="text"
+                        value={number}
+                        placeholder="Number"
+                        onChange={(e) => setNumber(e.target.value)}
+                    />
+                </div>
+                <div className='form-group'>
+                <input
+                    className='form-control'
+                    type="text"
+                    value={categoryId}
+                    placeholder="Category ID"
+                    onChange={(e) => setCategoryId(e.target.value)}
+                    />
+                </div>
+                <div className='form-group'>
+                <input
+                    className='form-control'
+                    type="text"
+                    value={description}
+                    placeholder="Short Description"
+                    onChange={(e) => setDescription(e.target.value)}
+                />
+                </div>
+                <div className='form-group'>
+                <input
+                    className='form-control'
+                    type="text"
+                    value={source}
+                    placeholder="Source"
+                    onChange={(e) => setSource(e.target.value)}
+                />
+                </div>
+                <div className='form-group'>
+                <input
+                    className='form-control'
+                    type="text"
+                    value={url}
+                    placeholder="URL"
+                    onChange={(e) => setUrl(e.target.value)}
+                />
+                </div>
+                <div className='form-group'>
+                <input
+                    className='form-control'
+                    type="text"
+                    value={location}
+                    placeholder="Location"
+                    onChange={(e) => setLocation(e.target.value)}
+                />
+                </div>
+                <div className='form-group'>
+                <input
+                    className='form-control'
+                    type="text"
+                    value={keywords}
+                    placeholder="Keywords"
+                    onChange={(e) => setKeywords(e.target.value)}
+                />
+                </div>
+                <div className='form-group'>
+                <input
+                    className='form-control'
+                    type="text"
+                    value={weight}
+                    placeholder="Weight"
+                    onChange={(e) => setWeight(e.target.value)}
+                />
+                </div>
+                <br/>
+                <button className='btn btn-primary' type="submit">Save</button>
+            </form>
+        </div>
     );
 }
 

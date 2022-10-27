@@ -72,7 +72,7 @@ function App() {
           </Row>
         </Container>
       </Router>
-      
+    <ArticleForm/>
     </div>
   )
 }

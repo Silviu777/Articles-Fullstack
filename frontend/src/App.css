@@ -69,3 +69,11 @@ td button {
 .App button {
   margin-bottom: 20px;
 }
+
+.App form{
+  width: 75vw;
+  margin: auto;
+}
+.App form div {
+  margin-top: 20px;
+}
