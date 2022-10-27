@@ -65,3 +65,7 @@ td button {
 .article-form {
   padding: 0 10em;
 }
+
+.App button {
+  margin-bottom: 20px;
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import BootstrapTable from "react-bootstrap-table-next";
+import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom'
 import {useEffect, useState} from 'react'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -61,6 +62,7 @@ function ArticlesTable() {
 
     return (
         <div className="App">
+            <button type="button" class="btn btn-primary"><i class="bi bi-plus-lg"></i><Link/></button>
             <BootstrapTable
                 keyField="id"
                 data={articles}

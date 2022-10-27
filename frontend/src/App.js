@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom'
 import ArticlesTable from './components/ArticlesTable'
 import ArticleForm from './components/ArticleForm'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -19,9 +19,7 @@ function App() {
           <Navbar>
             <Container>
               <Navbar.Brand>
-                <Link to={'/api'} className="nav-link">
-                  Articles
-                </Link>
+                
               </Navbar.Brand>
 
               <Nav className="justify-content-end">
@@ -46,12 +44,15 @@ function App() {
               <h1>Articles Management</h1>
               <p>Choose an option from above in order to get started</p>
             </div>
+            <Routes>
+              <Route path='/api/articles' element={<ArticlesTable/>}/>
+            </Routes>
 
             <Col md={12}>
               <div className="wrapper">
                 {/* <Switch>
                   <Route
-                    exact
+                  exact
                     path=""
                     component={(props) => < { ...props } />}  // add each component on specific routes!
                   />
@@ -71,7 +72,7 @@ function App() {
           </Row>
         </Container>
       </Router>
-      <ArticlesTable/>
+      
     </div>
   )
 }
