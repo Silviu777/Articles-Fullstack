@@ -1,7 +1,9 @@
 require('dotenv').config()
 
 const express = require('express');
+const cors = require("cors");
 const app = express();
+
 
 //db connection
 const mongoose = require('mongoose');
@@ -16,6 +18,7 @@ db.once('open', () => console.log("Database connection established!"));
 
 
 app.use(express.json());
+app.use(cors());
 
 //articles routes
 const articlesRoute = require('./routes/articles');
