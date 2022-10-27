@@ -4,11 +4,23 @@
 
 body h3 {
   margin-bottom: 27px;
+
 }
 
 .navbar {
-  border-bottom: 1px groove rgb(221, 221, 221);
+  border-bottom: 3.5px groove rgb(221, 221, 221);
   background-color: #436b95;
+}
+
+.home {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+body {
+  background: linear-gradient(to top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  ;
+  background-attachment: fixed;
 }
 
 .navbar-brand a {
@@ -18,6 +30,10 @@ body h3 {
 
 .link {
   background-color: white;
+}
+
+.nav-link {
+  color: #fff;
 }
 
 .form-wrapper,

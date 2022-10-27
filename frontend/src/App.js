@@ -3,31 +3,35 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Link, Routes } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+import TokenList from './components/TokensList'
+
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
         <header className="App-header">
+
           <Navbar>
             <Container>
               <Navbar.Brand>
-                <Link to={'/api'} className="nav-link">
+                <Link to={'/'} className="nav-link">
                   Articles
                 </Link>
               </Navbar.Brand>
 
               <Nav className="justify-content-end">
                 <Nav>
-                  <Link to={'/api/articles'} className="nav-link">
+                  <Link to={'/articles'} className="nav-link">
                     Articles Data
                   </Link>
                 </Nav>
                 <Nav>
-                  <Link to={'/api/tokens'} className="nav-link">
+                  <Link to={'/tokens'} className="nav-link">
                     Tokens Data
                   </Link>
                 </Nav>
@@ -38,35 +42,24 @@ function App() {
 
         <Container>
           <Row>
+
             <div className='home'>
               <h1>Articles Management</h1>
               <p>Choose an option from above in order to get started</p>
             </div>
+            <div className="container">
+              <Routes>
+                <Route
+                  exact
+                  path="/tokens"
+                  element={<TokenList />}
+                />
 
-            <Col md={12}>
-              <div className="wrapper">
-                {/* <Switch>
-                  <Route
-                    exact
-                    path=""
-                    component={(props) => < { ...props } />}  // add each component on specific routes!
-                  />
-                  <Route
-                    exact
-                    path=""
-                    component={(props) => < { ...props } />}
-                  />
-                  <Route
-                    exact
-                    path=""
-                    component={(props) => < { ...props } />}
-                  />
-                </Switch> */}
-              </div>
-            </Col>
+              </Routes>
+            </div>
           </Row>
         </Container>
-      </Router>
+      </BrowserRouter>
     </div>
   )
 }
