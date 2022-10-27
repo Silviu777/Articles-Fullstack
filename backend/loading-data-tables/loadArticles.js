@@ -220,25 +220,96 @@ var options = {
                       });
 
 
-                      var options = {
-                        'method': 'POST',
-                        'url': 'http://localhost:5000/articles',
-                        'headers': {
-                          'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                          "Article_no": 10,
-                          "Article_short_description": "Totul despre somn",
-                          "Article_source": "Te Guardian",
-                          "Article_URL": "https://www.theguardian.com/lifeandstyle/2022/sep/24/want-to-get-a-good-nights-sleep-first-of-all-stop-trying?utm_source=substack&utm_medium=email",
-                          "Article_tokensIDs": [],
-                          "Article_categoryID": " inlocuim cu id-ul de la societate",
-                          "Location": "no location",
-                          "Article_keywords": "sleep, diseaze, night",
-                          "Article_weight": "dificil",
-                          "Article_citation": "Want to get a good night’s sleep? First of all, stop trying"
-                        })
-                      };
-                        request(options, function (error, response) {
-                            if (error) throw new Error(error);
-                          });
+var options = {
+  'method': 'POST',
+  'url': 'http://localhost:5000/articles',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    "Article_no": 10,
+    "Article_short_description": "Totul despre somn",
+    "Article_source": "Te Guardian",
+    "Article_URL": "https://www.theguardian.com/lifeandstyle/2022/sep/24/want-to-get-a-good-nights-sleep-first-of-all-stop-trying?utm_source=substack&utm_medium=email",
+    "Article_tokensIDs": [],
+    "Article_categoryID": " inlocuim cu id-ul de la societate",
+    "Location": "no location",
+    "Article_keywords": "sleep, diseaze, night",
+    "Article_weight": "dificil",
+    "Article_citation": "Want to get a good night’s sleep? First of all, stop trying"
+  })
+};
+  request(options, function (error, response) {
+      if (error) throw new Error(error);
+    });
+
+    var options = {
+      'method': 'POST',
+      'url': 'http://localhost:5000/articles',
+      'headers': {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "Article_no": 11,
+        "Article_short_description": "Productia cat si importurile de carbune sunt in crestere.",
+        "Article_source": "profit.ro",
+        "Article_URL": "https://www.profit.ro/povesti-cu-profit/energie/productia-dar-si-importurile-de-carbune-in-crestere-20896514",
+        "Article_tokensIDs": [],
+        "Article_categoryID": " inlocuim cu id-ul de la societate",
+        "Location": "Romania",
+        "Article_keywords": "carbune, importuri, statistica",
+        "Article_weight": "usor",
+        "Article_citation": "Producția, dar și importurile de cărbune - în creștere"
+      })
+    };
+      request(options, function (error, response) {
+          if (error) throw new Error(error);
+        });
+
+
+        var options = {
+          'method': 'POST',
+          'url': 'http://localhost:5000/articles',
+          'headers': {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            "Article_no": 12,
+            "Article_short_description": "Finantarea 3,5%, disputata de USR",
+            "Article_source": "Republica.ro",
+            "Article_URL": "https://republica.ro/dragi-politicieni-bine-intentionati-va-rog-respectuos-sa-nu-distrugeti-mecanismul-3-5-de-finantare-a-ong",
+            "Article_tokensIDs": [],
+            "Article_categoryID": " inlocuim cu id-ul de la politica",
+            "Location": "Romania",
+            "Article_keywords": "partid, finantare, ONG",
+            "Article_weight": "mediu",
+            "Article_citation": "Mirela Oprea - Dragi politicieni bine intenţionaţi, vă rog respectuos să nu distrugeţi mecanismul 3,5% de finanţare a ONG-urilor"
+          })
+        };
+
+          request(options, function (error, response) {
+              if (error) throw new Error(error);
+            });
+            var options = {
+              'method': 'POST',
+              'url': 'http://localhost:5000/articles',
+              'headers': {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                "Article_no": 13,
+                "Article_short_description": "De ce te simți amețit când bei? Cauze si efectele alcoolului",
+                "Article_source": "universal-sci.com",
+                "Article_URL": "https://www.universal-sci.com/article/why-you-get-dizzy-when-drunk",
+                "Article_tokensIDs": [],
+                "Article_categoryID": " inlocuim cu id-ul de la stiinta si tehnologie",
+                "Location": "no location",
+                "Article_keywords": "bautura, echilibru, studiu",
+                "Article_weight": "dificil",
+                "Article_citation": "Many of us have experienced this at least once; after having one too many drinks, you seem to lose your balance and start having difficulty walking in a straight line. "
+              })
+            };
+              request(options, function (error, response) {
+                  if (error) throw new Error(error);
+                });
+      
