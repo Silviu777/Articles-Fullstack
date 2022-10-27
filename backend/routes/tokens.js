@@ -30,8 +30,10 @@ router.get('/:id', idFunctions.getTokensID, (req, res) => {
 })
 
 router.post('/', async (req, res) => {
+    console.log(req.body.Token_body);
     const token = new tokensSchema({ 
         Token_body: req.body.Token_body
+       
     });
     try{
         const newToken = await token.save();
