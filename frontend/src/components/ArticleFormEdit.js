@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function ArticleForm() {
+function ArticleFormEdit() {
 
     const params = new URLSearchParams(window.location.search);
     let articleId = params.get("id")
@@ -39,8 +39,8 @@ function ArticleForm() {
     let handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        let res = await fetch("http://localhost:5000/articles", {
-            method: "POST",
+        let res = await fetch("http://localhost:5000/articles/" + articleId, {
+            method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 Article_no: number,
@@ -53,11 +53,12 @@ function ArticleForm() {
                 Article_weight: weight
             }),
         });
-        window.open("http://localhost:3000/api/articles", "_self");
+        alert("Edited!")
         } 
         catch (err) {
             console.log("ceva nu e bine");
         }
+        window.open("http://localhost:3000/api/articles", "_self");
     };
 
     return (
@@ -147,5 +148,5 @@ function ArticleForm() {
     );
 }
 
-export default ArticleForm;
+export default ArticleFormEdit;
         

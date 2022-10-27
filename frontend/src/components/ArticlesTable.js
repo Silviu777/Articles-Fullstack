@@ -1,12 +1,16 @@
 import React from 'react'
 import BootstrapTable from "react-bootstrap-table-next";
-import {useEffect, useState} from 'react'
+import {useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
 function ArticlesTable() {
+
+  //nav through the pages
+  const navigate = useNavigate();
 
   useEffect( () => {
     fetchItems();
@@ -28,6 +32,21 @@ function ArticlesTable() {
        
      window.location.reload(false);
   }
+
+  function editArticle(articlesList, id){
+    let articleId = articlesList[id]._id
+
+    //go to /api/editArticles
+    navigate("../api/editArticle" + "?id=" + articleId);
+  }
+
+  function tokenizeArticle(articlesList, id) {
+    let articleId = articlesList[id]._id
+
+    //go to /api/editArticles
+    navigate("../api/tokenize" + "?id=" + articleId);
+  }
+
     const articles = [] 
 
       for(var index=0; index < items.length; index++){
@@ -56,8 +75,8 @@ function ArticlesTable() {
           formatter: (cell, row, rowIndex) => {
             return (
                 <div>
-                    <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
-                    <button type="button" class="btn btn-warning"><i class="bi bi-key-fill"></i></button>
+                    <button type="button" class="btn btn-success" onClick={() => editArticle(items, rowIndex)}><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn btn-warning" onClick={ () => tokenizeArticle(items, rowIndex)}><i class="bi bi-key-fill"></i></button>
                     <button  type="button" class="btn btn-danger" onClick={() => deleteArticle(items, rowIndex)}><i class="bi bi-trash-fill"></i></button>
                 </div>
             )
