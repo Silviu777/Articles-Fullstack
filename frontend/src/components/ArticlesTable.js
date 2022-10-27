@@ -27,7 +27,7 @@ function ArticlesTable() {
               {method: 'DELETE'})
                   .catch(err => alert("There was an error in deleting this article!"));
        
-       window.location.reload(false);
+     window.location.reload(false);
   }
     const articles = [] 
 
