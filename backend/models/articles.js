@@ -42,7 +42,7 @@ const articleSchema = new mongoose.Schema({
         type: String
     },
     Article_weight: {
-        type:Number
+        type: String
     },
     Article_citations: {
         type: String
