@@ -11,7 +11,7 @@ var options = {
     "Article_source": "BBC News",
     "Article_URL": "https://www.bbc.com/news/world-middle-east-63213745",
     "Article_tokensIDs": [],
-    "Article_categoryID": "635a809f235f9776088e3ddf",
+    "Article_categoryID": "635a945260e67ed1997ad491",
     "Location": "Iran",
     "Article_keywords": "proteste, GenZ, human rights",
     "Article_weight": "usor",
@@ -36,7 +36,7 @@ var options = {
       "Article_source": "panorama.ro",
       "Article_URL": "https://panorama.ro/cum-s-a-transformat-china-in-cei-10-ani-cu-xi-jinping/",
       "Article_tokensIDs": [],
-      "Article_categoryID": "635a809f235f9776088e3dd7",
+      "Article_categoryID": "635a945260e67ed1997ad491",
       "Location": "China",
       "Article_keywords": "comunism, putere, diplomatie",
       "Article_weight": "dificil",
@@ -48,6 +48,55 @@ var options = {
     if (error) throw new Error(error);
   });
 
+  var options = {
+    'method': 'POST',
+    'url': 'http://localhost:5000/articles',
+    'headers': {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "Article_no": 3,
+      "Article_short_description": "De ce generatia Z din Iran vrea sa traiasca altfel?",
+      "Article_source": "BBC News",
+      "Article_URL": "https://www.bbc.com/news/world-middle-east-63213745",
+      "Article_tokensIDs": [],
+      "Article_categoryID": "635a945260e67ed1997ad491",
+      "Location": "Iran",
+      "Article_keywords": "proteste, GenZ, human rights",
+      "Article_weight": "usor",
+      "Article_citation": "Parham Ghobadi, BBC Persian,Iran's Gen Z 'realise life can be lived differently' "
+    })
+  
+  };
+  request(options, function (error, response) {
+    if (error) throw new Error(error);
+  });
+  
+  
+  var options = {
+      'method': 'POST',
+      'url': 'http://localhost:5000/articles',
+      'headers': {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "Article_no": 4,
+        "Article_short_description": "Zece ani cu Xi Jinping",
+        "Article_source": "panorama.ro",
+        "Article_URL": "https://panorama.ro/cum-s-a-transformat-china-in-cei-10-ani-cu-xi-jinping/",
+        "Article_tokensIDs": [],
+        "Article_categoryID": "635a945260e67ed1997ad491",
+        "Location": "China",
+        "Article_keywords": "comunism, putere, diplomatie",
+        "Article_weight": "dificil",
+        "Article_citation": "Andreea Brinza, Cum s-a transformat China în cei 10 ani cu Xi Jinping"
+      })
+    
+    };
+    request(options, function (error, response) {
+      if (error) throw new Error(error);
+    });
+  
 
 //   var options = {
 //     'method': 'POST',
