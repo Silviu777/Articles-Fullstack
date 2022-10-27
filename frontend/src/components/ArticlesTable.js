@@ -1,17 +1,33 @@
 import React from 'react'
 import BootstrapTable from "react-bootstrap-table-next";
+import {useEffect, useState} from 'react'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+
+
 function ArticlesTable() {
 
-    const articles = [
-        { number: 1, description: "Lorem ipsum dolor sin amet", date: '10/26/22' },
-        { number: 2, description: "Lorem ipsum dolor sin amet", date: '10/26/22' },
-        { number: 3, description: "Lorem ipsum dolor sin amet", date: '10/26/22' },
-        { number: 4, description: "Lorem ipsum dolor sin amet", date: '10/26/22' },
-        { number: 5, description: "Lorem ipsum dolor sin amet", date: '10/26/22' }
-      ] 
+  useEffect( () => {
+    fetchItems();
+  }, []);
+
+  const [items, setItems] = useState([])
+
+  const fetchItems = async () => {
+    const data = await fetch("http://localhost:5000/articles", {method: 'GET'});
+    const items = await data.json();
+    setItems(items);
+  //  console.log(items);
+  };
+
+    const articles = [] 
+
+      for(var index=0; index < items.length; index++){
+        articles.push({number: items[index].Article_no, description: items[index].Article_short_description, date: items[index].Article_date })
+      }
+
+      console.log(articles);
     const columns = [
         {
           dataField: "number",

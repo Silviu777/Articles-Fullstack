@@ -76,6 +76,20 @@ router.put('/:id', idFunctions.getArticleID, async (req, res) => {
     }
 })
 
+//Patch 
+router.patch('/:id', idFunctions.getArticleID, async (req, res) => {
+    try{ 
+     if(req.body.token!= null){
+        res.article.Article_tokensIDs.push(req.body.token);
+     }
+     const updatedArticle = await res.article.save();
+     res.status(201).json({message: "Updated Article"});
+ }
+    catch(err){
+      res.status(500).json({message: err.message});
+     }
+ })
+
 //DELETE
 router.delete('/:id', idFunctions.getArticleID, async (req, res) => {
     try{
