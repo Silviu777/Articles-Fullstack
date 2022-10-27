@@ -49,30 +49,30 @@ var options = {
   });
 
 
-//   var options = {
-//     'method': 'POST',
-//     'url': 'http://localhost:5000/articles',
-//     'headers': {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//       "Article_no": 3,
-//       "Article_short_description": "Nou scandal pe TikTok",
-//       "Article_source": "BBC News",
-//       "Article_URL": "https://www.bbc.com/news/technology-63243423?xtor=ES-208-[55811_NEWS_NLB_ACT_WK43_Mon_24_October]-20221024-[bbcnews_technology_tiktok_allows_abuse_fimmaker_says]",
-//       "Article_tokensIDs": [],
-//       "Article_categoryID": " inlocuim cu id-ul de la internet",
-//       "Location": "no location",
-//       "Article_keywords": "TikTok, algorithm, comments",
-//       "Article_weight": "mediu",
-//       "Article_citation": "Zoe Kleinman,TikTok blamed by filmmaker for allowing abusive comments on video"
-//     })
+  var options = {
+    'method': 'POST',
+    'url': 'http://localhost:5000/articles',
+    'headers': {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "Article_no": 3,
+      "Article_short_description": "Nou scandal pe TikTok",
+      "Article_source": "BBC News",
+      "Article_URL": "https://www.bbc.com/news/technology-63243423?xtor=ES-208-[55811_NEWS_NLB_ACT_WK43_Mon_24_October]-20221024-[bbcnews_technology_tiktok_allows_abuse_fimmaker_says]",
+      "Article_tokensIDs": [],
+      "Article_categoryID": "635aa36149ec7dc6f6a2c927",
+      "Location": "no location",
+      "Article_keywords": "TikTok, algorithm, comments",
+      "Article_weight": "mediu",
+      "Article_citation": "Zoe Kleinman,TikTok blamed by filmmaker for allowing abusive comments on video"
+    })
     
   
-//   };
-//   request(options, function (error, response) {
-//     if (error) throw new Error(error);
-//   });
+  };
+  request(options, function (error, response) {
+    if (error) throw new Error(error);
+  });
 
   
 //   var options = {

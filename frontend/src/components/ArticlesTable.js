@@ -27,7 +27,7 @@ function ArticlesTable() {
         articles.push({number: items[index].Article_no, description: items[index].Article_short_description, date: items[index].Article_date })
       }
 
-      console.log(articles);
+    console.log(articles);
     const columns = [
         {
           dataField: "number",
@@ -50,7 +50,6 @@ function ArticlesTable() {
           formatter: (cell, row, rowIndex) => {
             return (
                 <div>
-                    <button type="button" class="btn btn-primary"><i class="bi bi-eye-fill"></i></button>
                     <button type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
                     <button type="button" class="btn btn-warning"><i class="bi bi-key-fill"></i></button>
                     <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
