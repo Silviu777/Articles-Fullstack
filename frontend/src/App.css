@@ -54,10 +54,14 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
 td button {
   margin: 0 2px;
+}
+
+.article-form {
+  padding: 0 10em;
 }
