@@ -4,11 +4,10 @@ const express = require('express');
 const cors = require("cors");
 const app = express();
 
-
 //db connection
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL,
- { useNewUrlParser: true });
+    { useNewUrlParser: true });
 
 
 //connecting to db
@@ -18,7 +17,7 @@ db.once('open', () => console.log("Database connection established!"));
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors())
 
 //articles routes
 const articlesRoute = require('./routes/articles');
@@ -34,8 +33,8 @@ app.use('/categories', categoriesRoute);
 
 //tema 3 routes
 const tema3Route = require('./routes/tema3Routes');
-app.use('/tema3',tema3Route );
+app.use('/tema3', tema3Route);
 
 //sv listening
 app.listen(process.env.SV_PORT, () =>
-     console.log('Server is running on port ' + process.env.SV_PORT + " ..."));
+    console.log('Server is running on port ' + process.env.SV_PORT + " ..."));

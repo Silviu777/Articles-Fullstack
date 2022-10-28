@@ -10,6 +10,7 @@ import ArticlesTable from './components/ArticlesTable'
 import ArticleForm from './components/ArticleForm'
 import ArticleFormEdit from './components/ArticleFormEdit'
 import Tokenize from './components/Tokenize'
+import TokensList from './components/TokensList'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
@@ -21,7 +22,7 @@ function App() {
           <Navbar>
             <Container>
               <Navbar.Brand>
-                
+
               </Navbar.Brand>
 
               <Nav className="justify-content-end">
@@ -47,16 +48,19 @@ function App() {
               <p>Choose an option from above in order to get started</p>
             </div>
             <Routes>
-              <Route path='/api/articles' element={<ArticlesTable/>}/>
+              <Route path='/api/articles' element={<ArticlesTable />} />
             </Routes>
             <Routes>
-              <Route path='/api/addArticle' element={<ArticleForm/>}/>
+              <Route path='/api/addArticle' element={<ArticleForm />} />
             </Routes>
             <Routes>
-              <Route path='/api/editArticle' element={<ArticleFormEdit/>}/>
+              <Route path='/api/editArticle' element={<ArticleFormEdit />} />
             </Routes>
             <Routes>
-              <Route path='/api/tokenize' element={<Tokenize/>}/>
+              <Route path='/api/tokenize' element={<Tokenize />} />
+            </Routes>
+            <Routes>
+              <Route path='/api/tokens' element={<TokensList />} />
             </Routes>
 
             <Col md={12}>
@@ -83,7 +87,7 @@ function App() {
           </Row>
         </Container>
       </Router>
-      
+
     </div>
   )
 }

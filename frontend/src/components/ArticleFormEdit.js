@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -6,9 +6,10 @@ function ArticleFormEdit() {
 
     const params = new URLSearchParams(window.location.search);
     let articleId = params.get("id")
-   
-     useEffect( () => {
+
+    useEffect(() => {
         fetchItems();
+
         fetchItems2();
         
       }, []);
@@ -77,6 +78,7 @@ function ArticleFormEdit() {
         console.log("sunt in submit")
         if(number == ""){
             console.log("sunt in asaf");
+
         }
         else{
         
@@ -167,7 +169,7 @@ function ArticleFormEdit() {
                     onChange={(e) => {setItems2({...items2,Article_weight: e.target.value})}}
                 />
                 </div>
-                <br/>
+                <br />
                 <button className='btn btn-primary' type="submit">Save</button>
             </form>
         </div>
@@ -175,4 +177,3 @@ function ArticleFormEdit() {
 }
 
 export default ArticleFormEdit;
-        
