@@ -21,6 +21,7 @@ function ArticlesTable() {
   const fetchItems = async () => {
     const data = await fetch("http://localhost:5000/articles", {method: 'GET'});
     const items = await data.json();
+    items.sort((a, b) => (a.Article_no > b.Article_no) ? 1 : -1)
     setItems(items);
   };
 
@@ -75,6 +76,7 @@ function ArticlesTable() {
           formatter: (cell, row, rowIndex) => {
             return (
                 <div class="text-center" >
+                 <a href={items[rowIndex].Article_URL}> <button type="button" class="btn btn-primary" ><i class="bi bi-eye-fill"></i></button></a>
                     <button type="button" class="btn btn-success" onClick={() => editArticle(items, rowIndex)}><i class="bi bi-pencil-square"></i></button>
                     <button type="button" class="btn btn-warning" onClick={ () => tokenizeArticle(items, rowIndex)}><i class="bi bi-key-fill"></i></button>
                     <button  type="button" class="btn btn-danger" onClick={() => deleteArticle(items, rowIndex)}><i class="bi bi-trash-fill"></i></button>

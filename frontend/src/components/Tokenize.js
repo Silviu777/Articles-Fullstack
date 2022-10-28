@@ -16,9 +16,11 @@ function Tokenize() {
    
     useEffect( () => {
         fetchItems();
+        fetchItems2();
       }, []);
     
       const [items, setItems] = useState([])
+      const [items2, setItems2] = useState([])
       const [articles, setArticles] = useState([])
       const [token, setToken] = useState(" --- ");
     
@@ -28,18 +30,14 @@ function Tokenize() {
         setItems(items);
       };
 
-      async function ceva() {
-        try{
-        const data = await fetch("http://localhost:5000/articoles/"+ articleId, {method: 'GET'});
-        const items = await data.json();
-        console.log(items);
-        }
-        catch(err){
-          console.log(err);
-        }
+      const fetchItems2 = async () => {
+        const data = await fetch("http://localhost:5000/articles/"+ articleId, {method: 'GET'});
+        const items2 = await data.json();
+        setItems2(items2);
+        
       };
 
-      ceva();
+   
 
       let handleSubmit = async (e) => {
         e.preventDefault();
@@ -73,13 +71,13 @@ function Tokenize() {
           <div className="App" class="text-center">
           <form onSubmit={handleSubmit}>
             <div className='form-group'>
-            <label className='form-control'> <ul>
-  
-</ul> </label>
+            <label className='form-control'> {JSON.stringify(items2.Article_tokensIDs)}
+             </label>
             </div >
+            <br></br>
             <div className='form-group' >
               <select className='form-control' onChange={(e) => setToken(e.target.value)}>
-              <option  value=" --- "> --- </option>
+              <option  value=" --- "> ---Select Token--- </option>
               {items.map((value, key) => {
             return (
               <option value={value._id}> {value.Token_body} </option>
