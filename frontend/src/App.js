@@ -3,7 +3,6 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { BrowserRouter, Switch, Route, Link, Routes } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom'
@@ -11,9 +10,8 @@ import ArticlesTable from './components/ArticlesTable'
 import ArticleForm from './components/ArticleForm'
 import ArticleFormEdit from './components/ArticleFormEdit'
 import Tokenize from './components/Tokenize'
+import TokensList from './components/TokensList'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
-import TokenList from './components/TokensList'
 import './App.css'
 
 function App() {
@@ -61,6 +59,9 @@ function App() {
             <Routes>
               <Route path='/api/tokenize' element={<Tokenize />} />
             </Routes>
+            <Routes>
+              <Route path='/api/tokens' element={<TokensList />} />
+            </Routes>
 
             <Col md={12}>
               <div className="wrapper">
@@ -86,6 +87,7 @@ function App() {
           </Row>
         </Container>
       </Router>
+
     </div>
   )
 }

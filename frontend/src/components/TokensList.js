@@ -14,7 +14,7 @@ export default class TokensList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/tokens/')
+        axios.get('http://localhost:6000/tokens')
             .then(res => {
                 this.setState({
                     tokens: res.data

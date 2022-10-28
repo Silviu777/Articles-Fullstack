@@ -3,8 +3,6 @@ require('dotenv').config()
 const express = require('express');
 const cors = require("cors");
 const app = express();
-const cors = require('cors');
-
 
 //db connection
 const mongoose = require('mongoose');
@@ -19,11 +17,7 @@ db.once('open', () => console.log("Database connection established!"));
 
 
 app.use(express.json());
-<<<<<<< HEAD
 app.use(cors())
-=======
-app.use(cors());
->>>>>>> main
 
 //articles routes
 const articlesRoute = require('./routes/articles');
@@ -43,8 +37,4 @@ app.use('/tema3', tema3Route);
 
 //sv listening
 app.listen(process.env.SV_PORT, () =>
-<<<<<<< HEAD
     console.log('Server is running on port ' + process.env.SV_PORT + " ..."));
-=======
-     console.log('Server is running on port ' + process.env.SV_PORT + " ..."));
->>>>>>> main
