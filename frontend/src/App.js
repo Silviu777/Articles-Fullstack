@@ -10,6 +10,7 @@ import ArticlesTable from './components/ArticlesTable'
 import ArticleForm from './components/ArticleForm'
 import ArticleFormEdit from './components/ArticleFormEdit'
 import Tokenize from './components/Tokenize'
+import TokensList from './components/TokensList'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
@@ -57,6 +58,9 @@ function App() {
             </Routes>
             <Routes>
               <Route path='/api/tokenize' element={<Tokenize/>}/>
+            </Routes>
+            <Routes>
+              <Route path='/api/tokens' element={<TokensList />} />
             </Routes>
 
             <Col md={12}>

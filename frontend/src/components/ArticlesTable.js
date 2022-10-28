@@ -74,7 +74,7 @@ function ArticlesTable() {
           text: "Actions",
           formatter: (cell, row, rowIndex) => {
             return (
-                <div>
+                <div class="text-center" >
                     <button type="button" class="btn btn-success" onClick={() => editArticle(items, rowIndex)}><i class="bi bi-pencil-square"></i></button>
                     <button type="button" class="btn btn-warning" onClick={ () => tokenizeArticle(items, rowIndex)}><i class="bi bi-key-fill"></i></button>
                     <button  type="button" class="btn btn-danger" onClick={() => deleteArticle(items, rowIndex)}><i class="bi bi-trash-fill"></i></button>
@@ -85,8 +85,8 @@ function ArticlesTable() {
       ];
 
     return (
-        <div className="App">
-            <BootstrapTable
+        <div className="App" class="text-center" >
+            <BootstrapTable 
                 keyField="id"
                 data={articles}
                 columns={columns}
