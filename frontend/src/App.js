@@ -7,7 +7,6 @@ import { BrowserRouter, Switch, Route, Link, Routes } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import TokenList from './components/TokensList'
-
 import './App.css'
 
 function App() {
