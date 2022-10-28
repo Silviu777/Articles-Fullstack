@@ -40,10 +40,6 @@ function ArticleFormEdit() {
 
       };
       
-    
-
-    
-      
 
     const [postId, setPostId] = useState(null);
 
@@ -51,36 +47,36 @@ function ArticleFormEdit() {
 
     let handleSubmit = async (e) => {
         e.preventDefault();
-        // try {
-        // let res = await fetch("http://localhost:5000/articles/" + articleId, {
-        //     method: "PUT",
-        //     headers: {"Content-Type": "application/json"},
-        //     body: JSON.stringify({
-        //         Article_no: number,
-        //         Article_categoryID: categoryId,
-        //         Article_short_description: description,
-        //         Article_source: source,
-        //         Article_URL: url,
-        //         Location: location,
-        //         Article_keywords: keywords,
-        //         Article_weight: weight
-        //     }),
-        // });
-        // alert("Edited!")
-        // } 
-        // catch (err) {
-        //     console.log("ceva nu e bine");
-        // }
-        // window.open("http://localhost:3000/api/articles", "_self");
-
-        console.log("Number: "  + items2.Article_no);
-        console.log("sunt in submit")
-        if(number == ""){
-            console.log("sunt in asaf");
+        try {
+            let catID;
+            if(categoryId == ""){
+                catID = items2.Article_categoryID;  
+            }
+            else{
+                catID = categoryId;
+            }
+            const raw = {
+                        Article_no: items2.Article_no,
+                        Article_categoryID: catID,
+                        Article_short_description: items2.Article_short_description,
+                        Article_source: items2.Article_source,
+                        Article_URL: items2.Article_URL,
+                        Location: items2.Location,
+                        Article_keywords: items2.Article_keywords,
+                        Article_weight: items2.Article_weight,
+                    }
+                   
+        let res = await fetch("http://localhost:5000/articles/" + articleId, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(raw),
+        });
+        alert("Edited!")
+        } 
+        catch (err) {
+            console.log("ceva nu e bine");
         }
-        else{
-        
-        }
+        window.open("http://localhost:3000/api/articles", "_self");
 
     };
 
@@ -88,7 +84,7 @@ function ArticleFormEdit() {
         <div className="App">
 
             <form onSubmit={handleSubmit}>
-                <h2>Add / Edit Article </h2>
+                <h2>Edit Article </h2>
                
                 
                     <div className='form-group'>
@@ -119,7 +115,7 @@ function ArticleFormEdit() {
                     type="text"
                     value={items2.Article_short_description}
                     placeholder="Short Description"
-                    onChange={(e) => {setItems2({...items2,Article_short_description: e.target.value})}}
+                    onChange={(e) => { setItems2({...items2, Article_short_description: e.target.value})}}
                 />
                 </div>
                 <div className='form-group'>

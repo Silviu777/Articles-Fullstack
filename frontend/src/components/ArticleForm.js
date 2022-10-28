@@ -63,9 +63,9 @@ function ArticleForm() {
         <div className="App">
 
             <form onSubmit={handleSubmit}>
-                <h2>Add / Edit Article </h2>
+                <h2>Add Article </h2>
                 <div className='form-group'>
-                    <input
+                    <input  
                         className='form-control'
                         type="text"
                         value={number}

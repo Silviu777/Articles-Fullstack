@@ -18,6 +18,13 @@ body h3 {
 
 .link {
   background-color: white;
+  color: white;
+}
+
+.culoareAlb{
+  color:white !important;
+  font-weight: bold !important;
+  font-size: x-large;
 }
 
 .form-wrapper,

@@ -1,6 +1,7 @@
 import React from 'react'
 import {useEffect, useState} from 'react'
 import { useNavigate } from "react-router-dom";
+import './table.css'
 
 function Tokenize() {
 
@@ -69,10 +70,15 @@ function Tokenize() {
       
 
     return (
-          <div className="App">
+          <div className="App" class="text-center">
           <form onSubmit={handleSubmit}>
-            <label> Listare date despre articol? ori ce tokeni contine? </label>
-              <select onChange={(e) => setToken(e.target.value)}>
+            <div className='form-group'>
+            <label className='form-control'> <ul>
+  
+</ul> </label>
+            </div >
+            <div className='form-group' >
+              <select className='form-control' onChange={(e) => setToken(e.target.value)}>
               <option  value=" --- "> --- </option>
               {items.map((value, key) => {
             return (
@@ -80,7 +86,11 @@ function Tokenize() {
             );
           })}
               </select>
-              <button type="submit">Adauga token</button>
+              </div>
+              <br/>
+              <div class="text-center">
+              <button   className='btn btn-primary' class="addTokenBtn" type="submit">Add Token</button>
+              </div>
             </form>
             </div>
     );

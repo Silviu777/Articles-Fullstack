@@ -17,3 +17,15 @@ table td {
     border-width: 2 3px 7px;
     width:auto;
 }
+
+.addTokenBtn{
+    width:50%;
+    border-radius:15px;
+    border-color:#4682B4;
+    border:none;
+    background-color:#6ea0c9
+}
+
+.addTokenBtn:hover{
+    background-color:#6c91d4
+}

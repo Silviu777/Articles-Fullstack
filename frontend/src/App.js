@@ -28,12 +28,17 @@ function App() {
               <Nav className="justify-content-end">
                 <Nav>
                   <Link to={'/api/articles'} className="nav-link">
-                    Articles Data
+                    <p class="culoareAlb">Articles Data</p>
+                  </Link>
+                </Nav>
+                <Nav>
+                  <Link to={'/api/addArticle'} className="nav-link">
+                    <p class="culoareAlb">Add Articles</p>
                   </Link>
                 </Nav>
                 <Nav>
                   <Link to={'/api/tokens'} className="nav-link">
-                    Tokens Data
+                  <p class="culoareAlb">Tokens Data</p>
                   </Link>
                 </Nav>
               </Nav>
@@ -44,8 +49,9 @@ function App() {
         <Container>
           <Row>
             <div className='home'>
-              <h1>Articles Management</h1>
-              <p>Choose an option from above in order to get started</p>
+              <br></br>
+              <h1 class="text-center" >Articles Management</h1>
+              <br></br>
             </div>
             <Routes>
               <Route path='/api/articles' element={<ArticlesTable/>}/>
